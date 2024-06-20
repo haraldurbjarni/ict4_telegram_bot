@@ -13,6 +13,7 @@ from telegram.ext import (
 import requests
 import asyncio
 from dotenv import load_dotenv
+import os
 
 # Enable logging
 logging.basicConfig(
@@ -68,11 +69,7 @@ if __name__ == "__main__":
 
     # Retrieve the token from environment variables
     token = os.getenv("TOKEN")
-    application = (
-        ApplicationBuilder()
-        .token("7405687726:AAHIoZX2VePOiYA0dECZ6qIX258hKs2y9tg")
-        .build()
-    )
+    application = ApplicationBuilder().token("token").build()
 
     start_handler = CommandHandler("start", start)
     message_handler = MessageHandler(filters.PHOTO, handle_photo)
