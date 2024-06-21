@@ -69,7 +69,7 @@ if __name__ == "__main__":
 
     # Retrieve the token from environment variables
     token = os.getenv("TOKEN")
-    application = ApplicationBuilder().token("token").build()
+    application = ApplicationBuilder().token(token).build()
 
     start_handler = CommandHandler("start", start)
     message_handler = MessageHandler(filters.PHOTO, handle_photo)
